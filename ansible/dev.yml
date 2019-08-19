@@ -1,0 +1,11 @@
+---
+
+- name: Playbook for local development
+  hosts: all
+  become: yes
+  vars:
+    project_name: dvang
+    host_name: dvang.local
+
+  roles:
+    - project

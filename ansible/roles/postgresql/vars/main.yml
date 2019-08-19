@@ -1,0 +1,46 @@
+---
+
+postgresql_service_state: started
+postgresql_service_enabled: true
+
+# use python3 lib for postgres communication
+postgresql_python_library: python3-psycopg2
+
+# host-based authentication
+postgresql_hba_entries:
+  - {type: local, database: all, user: postgres, auth_method: peer}
+  - {type: local, database: all, user: all, auth_method: peer}
+  - {type: host, database: all, user: all, address: '127.0.0.1/32', auth_method: md5}
+  - {type: host, database: all, user: all, address: '::1/128', auth_method: md5}
+
+# databases to create
+postgresql_databases:
+  - name: "{{ db_name }}" # required; the rest are optional
+    # lc_collate: # defaults to 'en_US.UTF-8'
+    # lc_ctype: # defaults to 'en_US.UTF-8'
+    # encoding: # defaults to 'UTF-8'
+    # template: # defaults to 'template0'
+    # login_host: # defaults to 'localhost'
+    # login_password: postgres # defaults to not set
+    # login_user: postgres # defaults to 'postgresql_user'
+    # login_unix_socket: # defaults to 1st of postgresql_unix_socket_directories
+    # port: # defaults to not set
+    # owner: # defaults to postgresql_user
+    # state: # defaults to 'present'
+
+# db users to create
+postgresql_users:
+  - name: "{{ db_user }}" # required; the rest are optional
+    password: "{{ db_pass }}" # defaults to not set
+    # encrypted: false # defaults to not set
+    # priv: "ALL" # defaults to not set
+    # role_attr_flags: # defaults to not set
+    # db: "{{ db_name }}" # defaults to not set
+    # login_host: # defaults to 'localhost'
+    # login_password: # defaults to not set
+    # login_user: # defaults to '{{ postgresql_user }}'
+    # login_unix_socket: # defaults to 1st of postgresql_unix_socket_directories
+    # port: # defaults to not set
+    # state: # defaults to 'present'
+
+

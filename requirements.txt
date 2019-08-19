@@ -1,0 +1,10 @@
+Django
+django-debug-panel
+django-debug-toolbar
+gunicorn
+PyYAML
+requests
+six
+pytz
+Werkzeug
+psycopg2-binary

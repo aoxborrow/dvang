@@ -1,0 +1,12 @@
+*.pyc
+*.pem
+__pycache__
+.DS_Store
+.vagrant
+.coverage
+.idea
+node_modules
+ansible/*.retry
+ansible/roles/geerlingguy*
+django/settings_local.py
+public/static

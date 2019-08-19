@@ -1,0 +1,13 @@
+# define gunicorn app server
+upstream app_server {
+    server 127.0.0.1:8000 fail_timeout=0;
+}
+
+# config for non-SSL (local testing with NGINX)
+server {
+    listen 80 deferred default_server;
+    server_name {{ host_name }};
+
+    # include common config
+    include /etc/nginx/includes/site_common.conf;
+}

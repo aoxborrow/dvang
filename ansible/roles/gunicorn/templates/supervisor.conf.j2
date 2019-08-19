@@ -1,0 +1,9 @@
+[program:gunicorn]
+command={{ virtualenv_path }}/bin/gunicorn django.wsgi:application -c /etc/gunicorn/gunicorn.conf --pythonpath {{ django_path }}
+directory={{ django_path }}
+environment=PATH="{{ virtualenv_path }}/bin"
+user={{ user_name }}
+group={{ user_name }}
+autorestart=true
+autostart={{ gunicorn_autostart | bool | lower }}
+redirect_stderr=true

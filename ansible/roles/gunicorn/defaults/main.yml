@@ -1,0 +1,5 @@
+---
+
+# gunicorn default configuration
+gunicorn_enabled: false
+gunicorn_autostart: false

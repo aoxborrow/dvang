@@ -1,0 +1,9 @@
+{
+    "name": "dvang",
+    "version": "1.0.0",
+    "author": "Aaron Oxborrow <aaron@oxborrow.com>",
+    "repository": "https://github.com/paste/dvang",
+    "license": "UNLICENSED",
+    "dependencies" : {},
+    "devDependencies": {}
+}
