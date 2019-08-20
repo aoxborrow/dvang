@@ -1,10 +1,10 @@
 ---
 
-# project name
-project_name: dvang
+# project name, derived from parent folder, e.g. dvang
+project_name: "{{ playbook_dir | dirname | basename }}"
 
-# host name where site will be served
-host_name: dvang.local
+# host name where site will be served, e.g. dvang.local
+host_name: "{{ project_name }}.local"
 
 # linux user who will own project files
 user_name: "{{ ansible_user }}"
@@ -22,4 +22,4 @@ public_path: "{{ project_path }}/public"
 db_name: "{{ project_name }}"
 db_user: "{{ project_name }}"
 db_pass: "{{ project_name }}"
-
+db_host: localhost

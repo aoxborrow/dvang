@@ -3,6 +3,7 @@
 # django default configuration
 django_path: "{{ project_path }}/django"
 django_settings: "settings"
+django_debug: true
 django_migrate: true
 django_load_fixtures: true
 django_collectstatic: false

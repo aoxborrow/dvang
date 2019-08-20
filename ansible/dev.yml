@@ -3,9 +3,14 @@
 - name: Playbook for local development
   hosts: all
   become: yes
+
   vars:
-    project_name: dvang
-    host_name: dvang.local
+
+    # project name, e.g. dvang
+    project_name: "{{ playbook_dir | dirname | basename }}"
+
+    # host name where site will be served, e.g. dvang.local
+    host_name: "{{ project_name }}.local"
 
   roles:
     - project

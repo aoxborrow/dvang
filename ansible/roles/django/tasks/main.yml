@@ -1,15 +1,21 @@
 ---
 
-- name: Create the django log directory
-  file: path=/var/log/django state=directory owner={{ user_name }} group={{ user_name }} mode=0700
+- name: Create the dev settings_local.py if it doesn't exist
+  template:
+    src: settings_local.dev.py.j2
+    dest: "{{ django_path }}/settings_local.py"
+    force: no
+  when: django_debug|bool
 
-- name: Create the cache table
-  django_manage: command=createcachetable
-                 app_path={{ django_path }}
-                 virtualenv={{ virtualenv_path }}
-                 settings={{ django_settings }}
-                 cache_table=django_cache
-  become: no
+- name: Create the production settings_local.py if it doesn't exist
+  template:
+    src: settings_local.prod.py.j2
+    dest: "{{ django_path }}/settings_local.py"
+    force: no
+  when: not django_debug|bool
+
+- name: Create the Django log directory
+  file: path=/var/log/django state=directory owner={{ user_name }} group={{ user_name }} mode=0700
 
 - name: Run the Django migrate command
   django_manage: command=migrate

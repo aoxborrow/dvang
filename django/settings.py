@@ -29,25 +29,17 @@ sys.dont_write_bytecode = True
 SECRET_KEY = '9643587734045xa+*^mi+@rWFDWFQDFQDW9643587734'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # this is a security feature to prevent host spoofing in production
 ALLOWED_HOSTS = ['*']
-
-# the main domain for the application
-SITE_DOMAIN = 'dvang.party'
 
 # use HTTPS/SSL in production
 USE_SSL = True
 PROTOCOL = 'https://'
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-
-# redirect insecure requests to HTTPS
 SECURE_SSL_REDIRECT = True
-
-# don't redirect these paths (e.g. health check)
-SECURE_REDIRECT_EXEMPT = [r'^health_check$']
 
 # header passed from NGINX to indicate secure requests
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -97,35 +89,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'wsgi.application'
-
-
-# Cache Table
-# https://docs.djangoproject.com/en/2.2/topics/cache/
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-        'LOCATION': 'django_cache',  # cache table name
-    }
-}
-
-# Password validation
-# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
-
-# AUTH_PASSWORD_VALIDATORS = [
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-#     },
-# ]
 
 
 # Internationalization

@@ -272,7 +272,7 @@
     "username": "admin",
     "first_name": "",
     "last_name": "",
-    "email": "admin@dvang.party",
+    "email": "admin@example.com",
     "is_staff": true,
     "is_active": true,
     "date_joined": "2019-07-31T10:17:14.218Z",

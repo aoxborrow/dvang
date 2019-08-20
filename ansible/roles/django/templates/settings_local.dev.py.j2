@@ -1,5 +1,3 @@
-# copy this file to 'settings_local.py'
-
 DEBUG = True
 USE_SSL = False
 ALLOWED_HOSTS = ['*']
@@ -12,9 +10,9 @@ SESSION_COOKIE_DOMAIN = None
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dvang',
-        'USER': 'dvang',
-        'PASSWORD': 'dvang',
-        'HOST': 'localhost',
+        'NAME': '{{ db_name }}',
+        'USER': '{{ db_user }}',
+        'PASSWORD': '{{ db_pass }}',
+        'HOST': '{{ db_host }}',
     }
 }

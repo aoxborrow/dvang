@@ -3,12 +3,27 @@
 - name: Playbook for production
   hosts: all
   become: yes
+
   vars:
-    project_name: dvang
-    host_name: dvang.party
+    # project name, e.g. dvang
+    project_name: "{{ playbook_dir | dirname | basename }}"
+
+    # host name where site will be served, e.g. dvang.io
+    host_name: "{{ project_name }}.io"
+
+    # production database config
+    # db_name: "{{ project_name }}"
+    # db_user: "{{ project_name }}"
+    # db_pass: "{{ project_name }}"
+    # db_host: localhost
+
+    # production django config
+    django_debug: false
     django_migrate: false
     django_load_fixtures: false
     django_collectstatic: true
+
+    # production nginx/gunicorn
     gunicorn_autostart: true
     gunicorn_enabled: true
     nginx_use_ssl: true
