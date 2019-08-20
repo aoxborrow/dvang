@@ -11,6 +11,9 @@
     # host name where site will be served, e.g. dvang.io
     host_name: "{{ project_name }}.io"
 
+    # linux user who will own project files in home folder
+    user_name: "{{ ansible_user }}"
+
     # production database config
     # db_name: "{{ project_name }}"
     # db_user: "{{ project_name }}"
@@ -21,10 +24,9 @@
     django_debug: false
     django_migrate: false
     django_load_fixtures: false
-    django_collectstatic: true
+    django_collectstatic: false
 
     # production gunicorn
-    gunicorn_autostart: true
     gunicorn_enabled: true
 
     # production nginx
