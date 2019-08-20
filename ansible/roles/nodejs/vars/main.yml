@@ -1,5 +1,0 @@
----
-
-# nodejs packages to install in global scope
-nodejs_npm_global_packages:
-  - grunt-cli
