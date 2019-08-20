@@ -23,10 +23,12 @@
     django_load_fixtures: false
     django_collectstatic: true
 
-    # production nginx/gunicorn
+    # production gunicorn
     gunicorn_autostart: true
     gunicorn_enabled: true
-    nginx_use_ssl: true
+
+    # production nginx
+    nginx_use_ssl: false
     nginx_enabled: true
 
   roles:

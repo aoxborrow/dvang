@@ -34,16 +34,6 @@ DEBUG = False
 # this is a security feature to prevent host spoofing in production
 ALLOWED_HOSTS = ['*']
 
-# use HTTPS/SSL in production
-USE_SSL = True
-PROTOCOL = 'https://'
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-
-# header passed from NGINX to indicate secure requests
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 # installed applications
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -127,14 +117,26 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_COLLAPSED': True,
 }
 
+# use HTTPS/SSL
+USE_SSL = False
+
 # local/development settings will override the production settings above
 try:
     from settings_local import *
 except ImportError as e:
     pass
 
+# use HTTPS/SSL in production
+if USE_SSL:
+    PROTOCOL = 'https://'
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    # header passed from NGINX to indicate secure requests
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
+
 # use HTTP for local development
-if not USE_SSL:
+else:
     PROTOCOL = 'http://'
     SESSION_COOKIE_SECURE = False
     CSRF_COOKIE_SECURE = False
