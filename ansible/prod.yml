@@ -24,7 +24,7 @@
     django_debug: false
     django_migrate: false
     django_load_fixtures: false
-    django_collectstatic: false
+    django_collectstatic: true
 
     # production gunicorn
     gunicorn_enabled: true
