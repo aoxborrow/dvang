@@ -4,34 +4,34 @@ DVANG
 ### Django-Vagrant-Ansible-Nginx-Gunicorn *Starter Pack*
 
 This is a starter pack for quickly developing a Django project locally with Vagrant, which is then easily deployed into production with Ansible. It installs and configures all the services you'll need:
- - Vagrant VM based on Ubuntu 18.04
- - Python 3.6 virtualenv for your Django app and its dependencies
- - Nginx to serve static files and proxy to Gunicorn
- - Supervisor to automatically start/restart Gunicorn
- - PostgreSQL with database and initial Django migrations
- - Minimal Django configuration with Django Admin and Debug Toolbar
- - Node.js for installing front-end components *(optional)*
+ - **Vagrant** VM based on **Ubuntu 18.04**
+ - **Python 3.6** virtualenv for your **Django** app and its dependencies
+ - **Nginx** to serve static files and proxy to **Gunicorn**
+ - **Supervisor** to automatically start/restart Gunicorn
+ - **PostgreSQL** with database and initial Django migrations
+ - Minimal Django configuration with **Django Admin** and **Debug Toolbar**
+ - **Node.js** for installing front-end components *(optional)*
 
 ### Features
-- disposable environment is fully self-contained within the Vagrant VM
+- Disposable environment is fully self-contained within the Vagrant VM
 - Ansible playbooks for both local development and production
-- develop with Django dev server, then test/deploy with Gunicorn/Nginx
-- easily add Ansible galaxy roles *(ansible/requirements.yml)*
-- activates Python virtualenv on login
-- installs Python packages from `requirements.txt`
-- installs Node packages from `package.json`
-- configure environment-specific Django settings in `settings_local.py`
+- Develop with Django dev server, then test/deploy with Gunicorn/Nginx
+- Easily add Ansible galaxy roles *(ansible/requirements.yml)*
+- Activates Python virtualenv on login
+- Installs Python packages from `requirements.txt`
+- Installs Node packages from `package.json`
+- Configure environment-specific Django settings in `settings_local.py`
 
 ### Shortcuts
-- run Django devserver `make run`
-- makemigrations and migrate `make migrate`
-- load Django fixtures `make load`
-- Django collect static files `make collect`
-- start or restart Gunicorn/Nginx: `make restart`
-- activate the virtualenv `activate`
-- deactivate the virtualenv `deactivate`
-- run playbook for dev `make provision-dev` *(must deactivate virtualenv)*
-- run playbook production `make provision-prod` *(must deactivate virtualenv)*
+- `activate` - activate the virtualenv 
+- `deactivate` - deactivate the virtualenv 
+- `make run` - run Django development server 
+- `make migrate` - makemigrations and migrate 
+- `make load` - load fixtures 
+- `make collect` - collect static files 
+- `make restart` - start/restart Gunicorn & Nginx
+- `make provision-dev` - run playbook for dev *(must deactivate virtualenv)*
+- `make provision-prod` - run playbook production *(must deactivate virtualenv)*
 ----
 
 ### Local Development
