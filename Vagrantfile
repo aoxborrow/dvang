@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 # lowercase project name, no spaces
-PROJECT_NAME = "dvang"
+PROJECT_NAME = File.basename(Dir.pwd)
 
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
