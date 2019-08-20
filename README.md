@@ -96,6 +96,11 @@ This is a starter pack for quickly developing a Django project locally with Vagr
     sudo ansible/install.sh
     ```
 
+0. Install Ansible Galaxy roles:
+    ```sh
+    make install-galaxy-roles
+    ```
+
 0. Run the Ansible production playbook:
     ```sh
     make provision-prod
@@ -141,7 +146,7 @@ This is a starter pack for quickly developing a Django project locally with Vagr
     ~/dvang.io.key
     ```
 
-0. Update the production playboook to use SSL in `ansible/prod.yml`:  
+0. Update the production playboook to use SSL, in `ansible/prod.yml`:  
     ```yaml
     nginx_use_ssl: true
     ```

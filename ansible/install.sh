@@ -5,7 +5,7 @@ then
     sudo DEBIAN_FRONTEND=noninteractive apt-get -y install software-properties-common
     sudo apt-add-repository -y ppa:ansible/ansible
     sudo apt-get update -y
-    sudo DEBIAN_FRONTEND=noninteractive apt-get -y install -y ansible
+    sudo DEBIAN_FRONTEND=noninteractive apt-get -y install -y ansible make
 
     # add localhost to ansible hosts inventory
     sudo mkdir -p /etc/ansible
