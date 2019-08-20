@@ -84,7 +84,7 @@ This is a starter pack for quickly developing a Django project locally with Vagr
 
 ### In Production
 
-0. You'll need a hosting account with `sudo` privileges to run Ansible. If you only have a `root` user, create a new user and grant them `sudo` access: https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart
+0. You'll need a remote user with `sudo` privileges to run Ansible.
 
 0. Edit the `host_name` and other settings in `ansible/prod.yml` as necessary.
 
@@ -108,7 +108,7 @@ This is a starter pack for quickly developing a Django project locally with Vagr
 
 0. Activate the virtualenv:
     ```sh
-    activate
+    source ~/.bashrc
     ```
 
 0. Apply Django migrations:

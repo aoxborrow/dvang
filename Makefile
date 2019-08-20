@@ -32,10 +32,10 @@ stop:
 	sudo service nginx stop
 
 install-galaxy-roles:
-	sudo ansible-galaxy install --roles-path ansible/roles -r ansible/requirements.yml
+	ansible-galaxy install --roles-path ansible/roles -r ansible/requirements.yml
 
 provision-dev:
-	sudo ansible-playbook -c local ansible/dev.yml
+	ansible-playbook -c local ansible/dev.yml
 
 provision-prod:
-	sudo ansible-playbook -c local ansible/prod.yml
+	ansible-playbook -c local ansible/prod.yml
