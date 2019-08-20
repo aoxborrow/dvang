@@ -108,6 +108,7 @@ This is a starter pack for quickly developing a Django project locally with Vagr
 
 0. Activate the virtualenv:
     ```sh
+    # after this you can use "activate" and "deactivate" shortcuts
     source ~/.bashrc
     ```
 
@@ -124,11 +125,6 @@ This is a starter pack for quickly developing a Django project locally with Vagr
 0. Collect Django static files:
     ```sh
     make collect
-    ```
-
-0. Restart Gunicorn:
-    ```sh
-    make restart
     ```
 
 0. **Profit** :heavy_check_mark:
