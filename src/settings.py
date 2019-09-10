@@ -13,11 +13,11 @@ import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DJANGO_DIR = os.path.join(BASE_DIR, 'django')
-APPS_DIR = os.path.join(DJANGO_DIR, 'apps')
+SRC_DIR = os.path.join(BASE_DIR, 'src')
+APPS_DIR = os.path.join(SRC_DIR, 'apps')
 
-# add the main django path to the pythonpath
-sys.path.insert(0, DJANGO_DIR)
+# add the main project path to the pythonpath
+sys.path.insert(0, SRC_DIR)
 
 # add the apps path to the pythonpath
 sys.path.insert(0, APPS_DIR)
@@ -64,7 +64,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(DJANGO_DIR, 'templates'),
+            os.path.join(SRC_DIR, 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -122,7 +122,7 @@ MEDIA_URL = '/media/'
 
 # additional locations of static files to collect
 STATICFILES_DIRS = (
-    os.path.join(DJANGO_DIR, 'static'),
+    os.path.join(SRC_DIR, 'static'),
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'public/static')

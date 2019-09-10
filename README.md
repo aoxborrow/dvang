@@ -147,7 +147,7 @@ This is a starter pack for quickly developing a Django project locally with Vagr
     nginx_use_ssl: true
     ```
 
-0. Enable SSL features for Django, in `django/settings_local.py`:  
+0. Enable SSL features for Django, in `src/settings_local.py`:  
     ```py
     # this enables secure cookies, HTTP redirect, etc.
     USE_SSL = True

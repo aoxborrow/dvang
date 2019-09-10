@@ -1,7 +1,7 @@
 ---
 
 # django default configuration
-django_path: "{{ project_path }}/django"
+django_path: "{{ project_path }}/src"
 django_settings: "settings"
 django_debug: true
 django_migrate: true

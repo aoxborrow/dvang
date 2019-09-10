@@ -1,19 +1,19 @@
 default: run
 
 run:
-	django/manage.py runserver 0.0.0.0:80
+	src/manage.py runserver 0.0.0.0:80
 
 load:
-	django/manage.py makemigrations
-	django/manage.py migrate
-	django/manage.py loaddata django/fixtures/*
+	src/manage.py makemigrations
+	src/manage.py migrate
+	src/manage.py loaddata src/fixtures/*
 
 migrate:
-	django/manage.py makemigrations
-	django/manage.py migrate
+	src/manage.py makemigrations
+	src/manage.py migrate
 
 collect:
-	django/manage.py collectstatic --noinput
+	src/manage.py collectstatic --noinput
 
 clean:
 	find . -name "__pycache__" -print0 | xargs -0 rm -rf

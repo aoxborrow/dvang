@@ -8,5 +8,5 @@ __pycache__
 node_modules
 ansible/*.retry
 ansible/roles/geerlingguy*
-django/settings_local.py
+src/settings_local.py
 public/static
